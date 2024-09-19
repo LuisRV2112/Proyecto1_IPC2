@@ -15,7 +15,7 @@ public class RevistaDAO {
             ps.setString(1, revista.getTitulo());
             ps.setString(2, revista.getDescripcion());
             ps.setString(3, revista.getCategoria());
-            ps.setInt(4, revista.getAutor());  // ID del autor (usuario)
+            ps.setString(4, revista.getAutor());  // ID del autor (usuario)
             ps.setDouble(5, revista.getCostoPorDia());
             ps.executeUpdate();
             return true;
@@ -39,7 +39,7 @@ public class RevistaDAO {
                         rs.getString("titulo"),
                         rs.getString("descripcion"),
                         rs.getString("categoria"),
-                        rs.getInt("autor"),
+                        rs.getString("autor"),
                         rs.getDouble("costo_por_dia")
                 );
                 listaRevistas.add(revista);

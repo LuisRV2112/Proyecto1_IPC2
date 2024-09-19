@@ -12,7 +12,7 @@ public class RevistaController  extends HttpServlet {
         String titulo = request.getParameter("titulo");
         String descripcion = request.getParameter("descripcion");
         String categoria = request.getParameter("categoria");
-        Integer autor = Integer.valueOf(request.getParameter("autor"));
+        String autor = String.valueOf(Integer.valueOf(request.getParameter("autor")));
         double costoPorDia = Double.parseDouble(request.getParameter("costoPorDia"));
 
         Revista revista = new Revista(revistas.size() + 1, titulo, descripcion, categoria, autor, costoPorDia);

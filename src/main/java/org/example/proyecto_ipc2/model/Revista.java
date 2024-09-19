@@ -5,7 +5,7 @@ public class Revista {
     private String titulo;
     private String descripcion;
     private String categoria;
-    private Integer autor;
+    private String autor;
     private double costoPorDia;
     private int likes;
 
@@ -53,12 +53,12 @@ public class Revista {
         this.categoria = categoria;
     }
 
-    public int getAutor() {
+    public String getAutor() {
         return autor;
     }
 
     public void setAutor(String autor) {
-        this.autor = Integer.valueOf(autor);
+        this.autor = String.valueOf(Integer.valueOf(autor));
     }
 
     public double getCostoPorDia() {

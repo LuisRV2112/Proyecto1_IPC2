@@ -25,7 +25,7 @@ public class SuscripcionDAO {
     }
 
     // Obtener suscripciones por suscriptor
-    public static ArrayList<Suscripcion> obtenerSuscripcionesPorSuscriptor(int idSuscriptor) {
+   /* public static ArrayList<Suscripcion> obtenerSuscripcionesPorSuscriptor(int idSuscriptor) {
         String sql = "SELECT * FROM suscripciones WHERE id_suscriptor = ?";
         ArrayList<Suscripcion> listaSuscripciones = new ArrayList<>();
         try (Connection conn = ConexionDB.getConnection();
@@ -59,5 +59,5 @@ public class SuscripcionDAO {
             e.printStackTrace();
             return false;
         }
-    }
+    }*/
 }
