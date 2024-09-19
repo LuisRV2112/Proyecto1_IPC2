@@ -1,4 +1,5 @@
 package org.example.proyecto_ipc2.controller;
+import jakarta.servlet.annotation.WebServlet;
 import org.example.proyecto_ipc2.model.Autenticacion;
 
 import jakarta.servlet.http.HttpServlet;
@@ -7,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-
+@WebServlet("/Login")
 public class LoginController extends HttpServlet {
     private Autenticacion autenticacion = new Autenticacion("admin@ejemplo.com", "1234");
 
