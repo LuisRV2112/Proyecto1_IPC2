@@ -13,7 +13,7 @@
 </head>
 <body>
 <h2>Iniciar Sesión</h2>
-<form action="LoginController" method="post">
+<form action="Login" method="post">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required><br><br>
 

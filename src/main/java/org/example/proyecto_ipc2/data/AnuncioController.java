@@ -26,12 +26,12 @@ public class AnuncioController extends HttpServlet{
             response.sendRedirect("error.jsp");
         }
     }
-
+@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         ArrayList<Anuncio> anuncios = AnuncioDAO.obtenerAnuncios();
         request.setAttribute("anuncios", anuncios);
         try {
-            request.getRequestDispatcher("/view/listarAnuncios.jsp").forward(request, response);
+            request.getRequestDispatcher("/webapp/listarAnuncios.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

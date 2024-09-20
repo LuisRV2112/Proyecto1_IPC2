@@ -1,18 +1,22 @@
 package org.example.proyecto_ipc2.controller;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import org.example.proyecto_ipc2.model.Suscripcion;
 import org.example.proyecto_ipc2.model.Revista;
 import org.example.proyecto_ipc2.model.Suscriptor;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+@WebServlet(name = "Suscripcion", urlPatterns = {"/Controlsuscripcion"} )
 public class SuscripcionController extends HttpServlet {
     private ArrayList<Suscripcion> suscripciones = new ArrayList<>();
-
+@Override
     // Manejar suscripción
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtener datos de la revista y suscriptor (en un escenario real, se obtendría de la sesión o base de datos)
         String idRevista = request.getParameter("revistaId");
         String idSuscriptor = request.getParameter("suscriptorId");
@@ -27,17 +31,17 @@ public class SuscripcionController extends HttpServlet {
         // Redirigir o reenviar a la lista de suscripciones
         request.setAttribute("suscripciones", suscripciones);
         try {
-            request.getRequestDispatcher("/view/listarSuscripciones.jsp").forward(request, response);
+            request.getRequestDispatcher("/webapp/listarSuscripciones.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    @Override
     // Simular la obtención de suscripciones
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("suscripciones", suscripciones);
         try {
-            request.getRequestDispatcher("/view/listarSuscripciones.jsp").forward(request, response);
+            request.getRequestDispatcher("/webapp/listarSuscripciones.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
